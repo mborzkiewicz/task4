@@ -1,0 +1,13 @@
+- name: tasks with tags
+  hosts: localhost
+  vars:
+    - huy: muj
+
+  tasks:
+    - name: check id alfa
+      shell:
+        cmd: id
+      register: huy
+    - name: check debug message
+      debug:
+        msg: "{{ huy.stdout_lines }} huj"
